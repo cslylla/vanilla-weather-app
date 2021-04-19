@@ -14,6 +14,7 @@
 </head>
 <body>
 <div class="container">
+    <div class="vanilla-weather-app-wrapper">
     <div class="vanilla-weather-app">
     <div class="row">
     <div class="col-sm">
@@ -35,25 +36,26 @@
     </ul>
     </h2>
     </div>
-    <div class="col-sm">
-    <h1>
-        10°C
-    </h1>
+    <div class="col-sm-3 currentTemperature">
+    <div class="clearfix">
+    <span class="currentTemperature float-left"> 10 </span>
+    <span class="float-left units">
+    °C | °F
+    </span>
+    </div>
 
     </div>
-    <div class="col-sm">
+    <div class="col-sm-2">
         <i class="far fa-sun mainPicture"></i>
     </div>
-    <div class="col-sm">
+    <div class="col-sm-4">
     <h1>
         Sunny
     </h1>
-    <h2>
     <ul>
     <li>Wind: 9 km/h</li>
     <li>Hunidity: 10%</li>
     </ul>
-    </h2>
     </div>
     </div>
     <div class="row">
@@ -107,14 +109,16 @@
         5
     </div>
     </div>
-    <small>
-    <a href="https://github.com/cslylla/vanilla-weather-app" target="_blank">
-        Open-source code</a> by
-    <a href="https://www.linkedin.com/in/lilla-csanaky-a850a617/" target="_blank">cslylla</a>
-    </small>
     </div>
-
+        <small>
+            <a href="https://github.com/cslylla/vanilla-weather-app" target="_blank">
+                Open-source code</a> by
+            <a href="https://www.linkedin.com/in/lilla-csanaky-a850a617/" target="_blank">cslylla</a>
+        </small>
+    </div>
 </div>
+
+
 <script src="src/app.js"></script>
 </body>
 </html>
