@@ -29,7 +29,6 @@ function formatTime(timestamp){
 function displayTemperature(response){
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
-
     let cityElement = document.querySelector("#city");
     cityElement.innerHTML =response.data.name; 
     let descriptionElement = document.querySelector("#description");
@@ -42,11 +41,14 @@ function displayTemperature(response){
     dateElement.innerHTML =formatDate(response.data.dt *1000);
     let timeElement = document.querySelector("#time");
     timeElement.innerHTML =formatTime(response.data.dt *1000);
-
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "dae43417d2ff1d99a68e276b41145b89";
-let unit="metric"
-let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=Solothurn&units=${unit}&appid=${apiKey}`;
+let unit="metric";
+let city= "Paris";
+let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
 
 axios.get(apiUrl).then(displayTemperature);
