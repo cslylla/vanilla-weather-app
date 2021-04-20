@@ -55,6 +55,11 @@ small {
   border: 5px solid #ed5485;
   border-radius: 15px;
 }
+
+.col-sm.searchBar {
+  padding: 0;
+  margin: 0;
+}
 .col-sm-3.currentTime {
   padding: 0;
   margin: 0 auto;

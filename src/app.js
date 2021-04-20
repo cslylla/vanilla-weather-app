@@ -26,7 +26,7 @@ function formatTime(timestamp){
     return `${hours}:${minutes}`
 }
 
-function displayTemperature(response){
+function displayData(response){
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     let cityElement = document.querySelector("#city");
@@ -46,9 +46,20 @@ function displayTemperature(response){
     iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "dae43417d2ff1d99a68e276b41145b89";
-let unit="metric";
-let city= "Paris";
-let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
+function search(city){
+    let apiKey = "dae43417d2ff1d99a68e276b41145b89";
+    let unit="metric";
+    let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
+    axios.get(apiUrl).then(displayData);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event){
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Solothurn");

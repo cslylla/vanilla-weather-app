@@ -18,13 +18,22 @@
     <div class="vanilla-weather-app-wrapper">
     <div class="vanilla-weather-app">
     <div class="row search">
-    <div class="col-sm">
-        search bar
+    <form id="search-form">
+        <div class=row>
+    <div class="col-sm-4 searchBar">
+        <input type="search" placeholder="Search for city" class="form-control" id="city-input"autofocus="on" autocomplete="off"/>
     </div>
-    <div class="col-sm">
-        search button
+    <div class="col-sm-4">
+        <input type="submit" value="Search" class="form-control" />
+    </div>
+    
+    </form>
+    <div class="col-sm-4">
+        current location button
     </div>
     </div>
+    </div>
+
     <div class="row main">
     <div class="col-sm-6 currentCity">
         <h1 id="city"></h1>
