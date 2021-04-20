@@ -46,9 +46,10 @@ small {
 }
 .vanilla-weather-app-wrapper {
   margin: 30px auto;
+  max-width: 600px;
 }
 .vanilla-weather-app {
-  max-width: 600px;
+  margin: 0 auto;
   color: #ed5485;
   background-color: #fffbcb;
   padding: 40px;
