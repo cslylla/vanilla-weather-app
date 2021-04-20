@@ -55,8 +55,13 @@ function search(city){
 
 function handleSubmit(event){
     event.preventDefault();
-    let cityInputElement = document.querySelector("#city-input");
-    search(cityInputElement.value);
+    let cityInputElement = document.querySelector("#city-input"); 
+    if (cityInputElement.value !== "") {
+    let city ="";
+    city = cityInputElement.value.trim();
+    city = city[0].toUpperCase() + city.substring(1);
+    search(city);
+  }
 }
 
 let form = document.querySelector("#search-form");
