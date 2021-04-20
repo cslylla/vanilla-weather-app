@@ -70,6 +70,7 @@ small {
   padding-top: 10px;
   text-align: right;
   font-weight: 900;
+  text-transform: capitalize;
 }
 
 .mainPicture {
