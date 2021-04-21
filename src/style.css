@@ -28,17 +28,37 @@ li {
 
 a {
   text-decoration: none;
-  color: #ed5485;
+  color: #57d1c9;
   transition: all 200ms ease-in-out;
 }
-
 a:hover {
+  text-decoration: none;
   color: #57d1c9;
+  transition: all 200ms ease-in-out;
   font-weight: bold;
+  cursor: default;
 }
 
 small {
   color: #ed5485;
+}
+a.contact {
+  text-decoration: none;
+  color: #ed5485;
+  transition: all 200ms ease-in-out;
+}
+
+a.contact:hover {
+  color: #57d1c9;
+  font-weight: bold;
+}
+
+a.active {
+  color: #ed5485;
+}
+
+a.active:hover {
+  text-decoration: none;
 }
 
 .container {
@@ -102,6 +122,7 @@ small {
   margin: 0;
   padding: 0;
 }
+
 .col-sm-2.mainPicture {
   margin: 0;
   padding: 0;
