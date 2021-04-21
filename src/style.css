@@ -61,6 +61,67 @@ a.active:hover {
   text-decoration: none;
 }
 
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #57d1c9;
+  color: #ed5485;
+  font-weight: bold;
+}
+
+.searchButton {
+  color: #ffff;
+  background-color: #ed5485;
+  font-size: 0.875rem;
+  font-weight: 900;
+  padding: 0.5rem;
+  line-height: 1.125rem;
+  border-radius: 50px;
+  box-shadow: 0 0.125rem 0 rgb(65, 61, 69, 20%);
+  transition: all 200ms ease;
+}
+.searchButton:hover {
+  background-color: #57d1c9;
+}
+.searchButton:focus {
+  color: #ffff;
+  background-color: #ed5485;
+  font-size: 0.875rem;
+  font-weight: 900;
+  padding: 0.5rem;
+  line-height: 1.125rem;
+  border-radius: 50px;
+  box-shadow: 0 0.125rem 0 rgb(65, 61, 69, 20%);
+  transition: all 200ms ease;
+}
+
+.currentLocationButton {
+  color: #ffff;
+  background-color: #ed5485;
+  font-size: 0.875rem;
+  font-weight: 900;
+  padding: 0.5rem;
+  line-height: 1.125rem;
+  border-radius: 50px;
+  box-shadow: 0 0.125rem 0 rgb(65, 61, 69, 20%);
+  transition: all 200ms ease;
+}
+.currentLocationButton:hover {
+  background-color: #57d1c9;
+}
+
+.currentLocationButton:focus {
+  color: #ffff;
+  background-color: #ed5485;
+  font-size: 0.875rem;
+  font-weight: 900;
+  padding: 0.5rem;
+  line-height: 1.125rem;
+  border-radius: 50px;
+  box-shadow: 0 0.125rem 0 rgb(65, 61, 69, 20%);
+  transition: all 200ms ease;
+}
+
 .container {
   background: #ffe869;
 }
