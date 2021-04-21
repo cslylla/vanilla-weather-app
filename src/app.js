@@ -43,10 +43,24 @@ function displayData(response){
     let timeElement = document.querySelector("#time");
     timeElement.innerHTML =formatTime(response.data.dt *1000);
     let iconElement = document.querySelector("#icon");
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    iconElement.setAttribute("alt", response.data.weather[0].description);
+    //iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    //iconElement.setAttribute("alt", response.data.weather[0].description);
 
-    
+    if(response.data.weather[0].icon === "01d") {iconElement.innerHTML = `<i class="fas fa-sun"></i>`}
+    else if (response.data.weather[0].icon === "01n") {iconElement.innerHTML = `<i class="fas fa-moon"></i>`}
+    else if (response.data.weather[0].icon === "02d") {iconElement.innerHTML = `<i class="fas fa-cloud-sun"></i>`}
+    else if (response.data.weather[0].icon === "02n") {iconElement.innerHTML = `<i class="fas fa-cloud-moon"></i>`}
+    else if (response.data.weather[0].icon === "03d" ||
+            response.data.weather[0].icon === "03n" ||
+            response.data.weather[0].icon === "04d" ||
+            response.data.weather[0].icon === "04n") {iconElement.innerHTML = `<i class="fas fa-cloud"></i>`}
+    else if (response.data.weather[0].icon === "09d" || response.data.weather[0].icon === "09n") {iconElement.innerHTML = `<i class="fas fa-cloud-showers-heavy"></i>`}
+    else if (response.data.weather[0].icon === "10d") {iconElement.innerHTML = `<i class="fas fa-cloud-sun-rain"></i>`}
+    else if (response.data.weather[0].icon === "10n") {iconElement.innerHTML = `<i class="fas fa-cloud-moon-rain"></i>`}
+    else if (response.data.weather[0].icon === "11d" || response.data.weather[0].icon === "11n") {iconElement.innerHTML = `<i class="fas fa-bolt"></i>`}
+    else if (response.data.weather[0].icon === "13d" || response.data.weather[0].icon === "13n") {iconElement.innerHTML = `<i class="fas fa-snowflake"></i>` }
+    else if (response.data.weather[0].icon === "50d" || response.data.weather[0].icon === "50n") {iconElement.innerHTML = `<i class="fas fa-smog"></i>`}
+    console.log(response.data.weather[0].icon);   
 }
 
 function search(city){
