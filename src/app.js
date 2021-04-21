@@ -43,9 +43,6 @@ function displayData(response){
     let timeElement = document.querySelector("#time");
     timeElement.innerHTML =formatTime(response.data.dt *1000);
     let iconElement = document.querySelector("#icon");
-    //iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    //iconElement.setAttribute("alt", response.data.weather[0].description);
-
     if(response.data.weather[0].icon === "01d") {iconElement.innerHTML = `<i class="fas fa-sun"></i>`}
     else if (response.data.weather[0].icon === "01n") {iconElement.innerHTML = `<i class="fas fa-moon"></i>`}
     else if (response.data.weather[0].icon === "02d") {iconElement.innerHTML = `<i class="fas fa-cloud-sun"></i>`}
@@ -59,11 +56,10 @@ function displayData(response){
     else if (response.data.weather[0].icon === "10n") {iconElement.innerHTML = `<i class="fas fa-cloud-moon-rain"></i>`}
     else if (response.data.weather[0].icon === "11d" || response.data.weather[0].icon === "11n") {iconElement.innerHTML = `<i class="fas fa-bolt"></i>`}
     else if (response.data.weather[0].icon === "13d" || response.data.weather[0].icon === "13n") {iconElement.innerHTML = `<i class="fas fa-snowflake"></i>` }
-    else if (response.data.weather[0].icon === "50d" || response.data.weather[0].icon === "50n") {iconElement.innerHTML = `<i class="fas fa-smog"></i>`}
-    console.log(response.data.weather[0].icon);   
+    else if (response.data.weather[0].icon === "50d" || response.data.weather[0].icon === "50n") {iconElement.innerHTML = `<i class="fas fa-smog"></i>`}   
 }
 
-function search(city){
+function searchCity(city){
     let apiKey = "dae43417d2ff1d99a68e276b41145b89";
     let unit="metric";
     let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
@@ -77,7 +73,7 @@ function handleSubmit(event){
     let city ="";
     city = cityInputElement.value.trim();
     city = city[0].toUpperCase() + city.substring(1);
-    search(city);
+    searchCity(city);
   }
 }
 
@@ -98,6 +94,20 @@ function displayCelsiusTemperature(event){
     temperatureElement.innerHTML = Math.round(celsiusTemperature); 
 }
 
+function searchLocation(position){
+    let latitude =position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let unit =`metric`;
+    let apiKey = `dae43417d2ff1d99a68e276b41145b89`;
+    let apiUrl =`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${unit}&appid=${apiKey}`;
+    axios.get(apiUrl).then(displayData);
+}
+
+function getCurrentLocation(event){
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -109,4 +119,9 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-search("Solothurn");
+
+let currentLocationElement = document.querySelector("#current-location-button");
+currentLocationElement.addEventListener("click", getCurrentLocation);
+
+
+searchCity("Solothurn");
