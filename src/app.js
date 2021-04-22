@@ -1,3 +1,26 @@
+function displayForecast(){
+    let forecastElement = document.querySelector("#forecast");
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+    let forecastHTML =`<div class="row">`;
+    days.forEach(function(day){
+    forecastHTML = forecastHTML +
+    `
+        <div class="col-sm-2">
+        <div class="weather-forecast-day">${day}</div>
+        <div class="weather-forecast-picture"><i class="far fa-sun weather-forecast-picture"></i></div>
+        <div class="weather-forecast-temperature">
+        <span class="weather-forecast-tempreature-max">17°C</span> | <span
+                        class="weather-forecast-tempreature-min">6°C</span>
+        </div>
+        </div>
+    `
+    })
+    
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
+
 function formatDate(timestamp){
     let date = new Date(timestamp);
     let days = [
@@ -126,3 +149,4 @@ currentLocationElement.addEventListener("click", getCurrentLocation);
 
 
 searchCity("Solothurn");
+displayForecast();
