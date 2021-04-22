@@ -172,7 +172,7 @@ div.col-sm-3 {
 
 .mainPicture {
   color: #9f5c4c;
-  font-size: 90px;
+  font-size: 100px;
   padding: 0;
   margin: 0 auto;
 }
@@ -211,9 +211,11 @@ div.col-sm-3 {
   font-weight: bold;
 }
 
-.weather-forecast-picture {
+.forecastIcon {
   color: #9f5c4c;
   font-size: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .weather-forecast-tempreature-max {

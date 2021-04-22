@@ -13,24 +13,61 @@ function formatDate(timestamp){
     return `${day}`
 }
 
+function formatForecastDay (timestamp){
+    let date = new Date(timestamp*1000);
+    let day = date.getDay();
+    let days = [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat", 
+    ]
+    return days[day];
+
+
+}
+
 function displayForecast(response){
-    console.log(response.data.daily);
+   
+    let forecast = response.data.daily;
+    
     let forecastElement = document.querySelector("#forecast");
-    let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
     let forecastHTML =`<div class="row">`;
-    days.forEach(function(day){
+    forecast.forEach(function (forecastDay, index){
+    if (index < 6) {
+    function displayForecastIcon(iconCode){
+    if(iconCode === "01d") {return `<i class="fas fa-sun forecastIcon"></i>`}
+    else if (iconCode === "01n") {return `<i class="fas fa-moon forecastIcon"></i>`}
+    else if (iconCode === "02d") {return `<i class="fas fa-cloud-sun forecastIcon"></i>`}
+    else if (iconCode === "02n") {return`<i class="fas fa-cloud-moon forecastIcon"></i>`}
+    else if (iconCode === "03d" ||
+            iconCode === "03n" ||
+            iconCode === "04d" ||
+            iconCode === "04n") {return `<i class="fas fa-cloud forecastIcon"></i>`}
+    else if (iconCode === "09d" || iconCode === "09n") {return `<i class="fas fa-cloud-showers-heavy forecastIcon"></i>`}
+    else if (iconCode === "10d") {return `<i class="fas fa-cloud-sun-rain forecastIcon"></i>`}
+    else if (iconCode === "10n") {return `<i class="fas fa-cloud-moon-rain forecastIcon"></i>`}
+    else if (iconCode === "11d" || iconCode === "11n") {return `<i class="fas fa-bolt forecastIcon"></i>`}
+    else if (iconCode === "13d" || iconCode === "13n") {return `<i class="fas fa-snowflake forecastIcon"></i>` }
+    else if (iconCode === "50d" || iconCode === "50n") {return`<i class="fas fa-smogforecastIcon"></i>`}    
+    }    
+
     forecastHTML = forecastHTML +
     `
         <div class="col-sm-2">
-        <div class="weather-forecast-day">${day}</div>
-        <div class="weather-forecast-picture"><i class="far fa-sun weather-forecast-picture"></i></div>
+        <div class="weather-forecast-day">${formatForecastDay(forecastDay.dt)}</div>
+        <div class="weather-forecast-picture">${displayForecastIcon(forecastDay.weather[0].icon)}</div>
         <div class="weather-forecast-temperature">
-        <span class="weather-forecast-tempreature-max">17°C</span> | <span
-                        class="weather-forecast-tempreature-min">6°C</span>
+        <span class="weather-forecast-tempreature-max">${Math.round(forecastDay.temp.max)}°C</span> | <span
+                        class="weather-forecast-tempreature-min">${Math.round(forecastDay.temp.min)}°C</span>
         </div>
         </div>
     `
-    })
+    
+    }})
     
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
