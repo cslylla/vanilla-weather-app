@@ -56,11 +56,7 @@ function displayData(response){
     else if (response.data.weather[0].icon === "10n") {iconElement.innerHTML = `<i class="fas fa-cloud-moon-rain"></i>`}
     else if (response.data.weather[0].icon === "11d" || response.data.weather[0].icon === "11n") {iconElement.innerHTML = `<i class="fas fa-bolt"></i>`}
     else if (response.data.weather[0].icon === "13d" || response.data.weather[0].icon === "13n") {iconElement.innerHTML = `<i class="fas fa-snowflake"></i>` }
-    else if (response.data.weather[0].icon === "50d" || response.data.weather[0].icon === "50n") {iconElement.innerHTML = `<i class="fas fa-smog"></i>`}   
-
-    let precipitationElement = document.querySelector("#precipitation");
-    console.log(response.data.main.humidity);
-    precipitationElement.innerHTML = response.data.main.precipitation;
+    else if (response.data.weather[0].icon === "50d" || response.data.weather[0].icon === "50n") {iconElement.innerHTML = `<i class="fas fa-smog"></i>`}
 
 }
 
