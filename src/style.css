@@ -1,5 +1,5 @@
 body {
-  background-image: url("../../vanilla-weather-app/src/pictures/background.jpg");
+  background-image: url("../src/pictures/background.jpg");
 }
 html,
 body {
@@ -31,34 +31,34 @@ li {
 
 a {
   text-decoration: none;
-  color: #9f5c4c;
+  color: #b25a49;
   transition: all 200ms ease-in-out;
 }
 a:hover {
   text-decoration: none;
-  color: #9f5c4c;
+  color: #b25a49;
   transition: all 200ms ease-in-out;
   font-weight: bold;
   cursor: default;
 }
 
 small {
-  color: #d35471;
+  color: #f15372;
   font-weight: bold;
 }
 a.contact {
   text-decoration: none;
-  color: #d35471;
+  color: #f15372;
   transition: all 200ms ease-in-out;
 }
 
 a.contact:hover {
-  color: #febe54;
+  color: #ffbd54;
   font-weight: bold;
 }
 
 a.active {
-  color: #d35471;
+  color: #f15372;
   font-weight: bold;
 }
 
@@ -74,14 +74,14 @@ div.col-sm-3 {
 .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #9f5c4c;
-  color: #d35471;
+  border-color: #b25a49;
+  color: #f15372;
   font-weight: bold;
 }
 
 .searchButton {
   color: #ffff;
-  background-color: #d35471;
+  background-color: #f15372;
   width: 120px;
   font-size: 0.875rem;
   margin-left: 20px;
@@ -93,11 +93,11 @@ div.col-sm-3 {
   transition: all 200ms ease;
 }
 .searchButton:hover {
-  background-color: #9f5c4c;
+  background-color: #b25a49;
 }
 .searchButton:focus {
   color: #ffff;
-  background-color: #d35471;
+  background-color: #f15372;
   font-size: 0.875rem;
   font-weight: 900;
   padding: 0.5rem;
@@ -109,7 +109,7 @@ div.col-sm-3 {
 
 .currentLocationButton {
   color: #ffff;
-  background-color: #d35471;
+  background-color: #f15372;
   width: 120px;
   font-size: 0.875rem;
   font-weight: 900;
@@ -120,12 +120,12 @@ div.col-sm-3 {
   transition: all 200ms ease;
 }
 .currentLocationButton:hover {
-  background-color: #9f5c4c;
+  background-color: #b25a49;
 }
 
 .currentLocationButton:focus {
   color: #ffff;
-  background-color: #d35471;
+  background-color: #f15372;
   font-size: 0.875rem;
   font-weight: 900;
   padding: 0.5rem;
@@ -141,10 +141,10 @@ div.col-sm-3 {
 }
 .vanilla-weather-app {
   margin: 0 auto;
-  color: #d35471;
-  background-color: #ffdfac;
+  color: #f15372;
+  background-color: #ffdda5;
   padding: 40px;
-  border: 5px solid #d35471;
+  border: 5px solid #f15372;
   border-radius: 15px;
 }
 
@@ -171,7 +171,7 @@ div.col-sm-3 {
 }
 
 .mainPicture {
-  color: #9f5c4c;
+  color: #b25a49;
   font-size: 120px;
   padding: 0;
   margin: 0 auto;
@@ -216,7 +216,7 @@ div.col-sm-3 {
 }
 
 .forecastIcon {
-  color: #9f5c4c;
+  color: #b25a49;
   font-size: 60px;
   padding-top: 10px;
   padding-bottom: 10px;
