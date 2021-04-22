@@ -129,6 +129,9 @@ function displayData(response){
     sunriseElement.innerHTML = formatTime(response.data.sys.sunrise*1000);
     let sunsetElement = document.querySelector("#sunset");
     sunsetElement.innerHTML = formatTime(response.data.sys.sunset*1000);
+    let feelsLikeElement = document.querySelector("#feelsLike");
+    feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
+    console.log(response.data.main.feels_like)
 
     getForecast(response.data.coord);
 }
