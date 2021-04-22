@@ -125,6 +125,10 @@ function displayData(response){
     else if (response.data.weather[0].icon === "11d" || response.data.weather[0].icon === "11n") {iconElement.innerHTML = `<i class="fas fa-bolt"></i>`}
     else if (response.data.weather[0].icon === "13d" || response.data.weather[0].icon === "13n") {iconElement.innerHTML = `<i class="fas fa-snowflake"></i>` }
     else if (response.data.weather[0].icon === "50d" || response.data.weather[0].icon === "50n") {iconElement.innerHTML = `<i class="fas fa-smog"></i>`}
+    let sunriseElement = document.querySelector("#sunrise"); 
+    sunriseElement.innerHTML = formatTime(response.data.sys.sunrise*1000);
+    let sunsetElement = document.querySelector("#sunset");
+    sunsetElement.innerHTML = formatTime(response.data.sys.sunset*1000);
 
     getForecast(response.data.coord);
 }
