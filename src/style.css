@@ -1,8 +1,11 @@
-body,
-html {
-  background: #ffe869 !important;
+body {
+  background-image: url("../../vanilla-weather-app/src/pictures/IceCream.png");
+}
+html,
+body {
   font-family: "Exo 2", sans-serif;
 }
+
 h1 {
   padding: 20px, 0, 20px, 0;
   font-weight: bold;
@@ -28,33 +31,35 @@ li {
 
 a {
   text-decoration: none;
-  color: #57d1c9;
+  color: #9f5c4c;
   transition: all 200ms ease-in-out;
 }
 a:hover {
   text-decoration: none;
-  color: #57d1c9;
+  color: #9f5c4c;
   transition: all 200ms ease-in-out;
   font-weight: bold;
   cursor: default;
 }
 
 small {
-  color: #ed5485;
+  color: #d35471;
+  font-weight: bold;
 }
 a.contact {
   text-decoration: none;
-  color: #ed5485;
+  color: #d35471;
   transition: all 200ms ease-in-out;
 }
 
 a.contact:hover {
-  color: #57d1c9;
+  color: #febe54;
   font-weight: bold;
 }
 
 a.active {
-  color: #ed5485;
+  color: #d35471;
+  font-weight: bold;
 }
 
 a.active:hover {
@@ -64,14 +69,14 @@ a.active:hover {
 .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #57d1c9;
-  color: #ed5485;
+  border-color: #9f5c4c;
+  color: #d35471;
   font-weight: bold;
 }
 
 .searchButton {
   color: #ffff;
-  background-color: #ed5485;
+  background-color: #d35471;
   font-size: 0.875rem;
   font-weight: 900;
   padding: 0.5rem;
@@ -81,11 +86,11 @@ a.active:hover {
   transition: all 200ms ease;
 }
 .searchButton:hover {
-  background-color: #57d1c9;
+  background-color: #9f5c4c;
 }
 .searchButton:focus {
   color: #ffff;
-  background-color: #ed5485;
+  background-color: #d35471;
   font-size: 0.875rem;
   font-weight: 900;
   padding: 0.5rem;
@@ -97,7 +102,7 @@ a.active:hover {
 
 .currentLocationButton {
   color: #ffff;
-  background-color: #ed5485;
+  background-color: #d35471;
   font-size: 0.875rem;
   font-weight: 900;
   padding: 0.5rem;
@@ -107,12 +112,12 @@ a.active:hover {
   transition: all 200ms ease;
 }
 .currentLocationButton:hover {
-  background-color: #57d1c9;
+  background-color: #9f5c4c;
 }
 
 .currentLocationButton:focus {
   color: #ffff;
-  background-color: #ed5485;
+  background-color: #d35471;
   font-size: 0.875rem;
   font-weight: 900;
   padding: 0.5rem;
@@ -122,19 +127,16 @@ a.active:hover {
   transition: all 200ms ease;
 }
 
-.container {
-  background: #ffe869;
-}
 .vanilla-weather-app-wrapper {
   margin: 30px auto;
   max-width: 600px;
 }
 .vanilla-weather-app {
   margin: 0 auto;
-  color: #ed5485;
-  background-color: #fffbcb;
+  color: #d35471;
+  background-color: #ffdfac;
   padding: 40px;
-  border: 5px solid #ed5485;
+  border: 5px solid #d35471;
   border-radius: 15px;
 }
 
@@ -161,7 +163,7 @@ a.active:hover {
 }
 
 .mainPicture {
-  color: #57d1c9;
+  color: #9f5c4c;
   font-size: 90px;
   padding: 0;
   margin: 0 auto;
@@ -191,19 +193,24 @@ a.active:hover {
   line-height: 100px;
   padding-bottom: 20px;
 }
-.col-sm.day {
+.weather-forecast {
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+.weather-forecast-day {
   font-weight: bold;
 }
 
-.col-sm.picture {
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-}
-.picture {
-  color: #57d1c9;
+.weather-forecast-picture {
+  color: #9f5c4c;
   font-size: 60px;
+}
+
+.weather-forecast-tempreature-max {
+  font-weight: bold;
+}
+.small.contact {
+  font-weight: bold;
 }
