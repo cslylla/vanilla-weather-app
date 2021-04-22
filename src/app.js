@@ -1,4 +1,20 @@
-function displayForecast(){
+function formatDate(timestamp){
+    let date = new Date(timestamp);
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturdayday", 
+    ]
+    let day = days[date.getDay()];
+    return `${day}`
+}
+
+function displayForecast(response){
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
     let forecastHTML =`<div class="row">`;
@@ -20,22 +36,6 @@ function displayForecast(){
     forecastElement.innerHTML = forecastHTML;
 }
 
-
-function formatDate(timestamp){
-    let date = new Date(timestamp);
-    let days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturdayday", 
-    ]
-    let day = days[date.getDay()];
-    return `${day}`
-}
-
 function formatTime(timestamp){
     let date = new Date(timestamp);
     let hours = date.getHours();
@@ -47,6 +47,14 @@ function formatTime(timestamp){
         hours = `0${hours}`
     }
     return `${hours}:${minutes}`
+}
+
+function getForecast(coordinates){
+    let apiKey = "dae43417d2ff1d99a68e276b41145b89";
+    let unit="metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=${unit}&appid=${apiKey}`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
 }
 
 function displayData(response){
@@ -81,6 +89,7 @@ function displayData(response){
     else if (response.data.weather[0].icon === "13d" || response.data.weather[0].icon === "13n") {iconElement.innerHTML = `<i class="fas fa-snowflake"></i>` }
     else if (response.data.weather[0].icon === "50d" || response.data.weather[0].icon === "50n") {iconElement.innerHTML = `<i class="fas fa-smog"></i>`}
 
+    getForecast(response.data.coord);
 }
 
 function searchCity(city){
@@ -149,4 +158,3 @@ currentLocationElement.addEventListener("click", getCurrentLocation);
 
 
 searchCity("Solothurn");
-displayForecast();
