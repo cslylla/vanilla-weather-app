@@ -71,8 +71,8 @@ div.col-sm-3 {
   margin: 0;
 }
 
-.form-control:focus {
-  outline: none;
+.form-control.searchField:focus {
+  outline: 2px solid #b25a49;
   box-shadow: none;
   border-color: #b25a49;
   color: #f15372;
@@ -102,8 +102,9 @@ div.col-sm-3 {
   font-weight: 900;
   padding: 0.5rem;
   line-height: 1.125rem;
+  outline: none;
   border-radius: 50px;
-  box-shadow: 0 0.125rem 0 rgb(65, 61, 69, 20%);
+  box-shadow: 1px 1px 3px 2px #b25a49;
   transition: all 200ms ease;
 }
 
@@ -131,7 +132,9 @@ div.col-sm-3 {
   padding: 0.5rem;
   line-height: 1.125rem;
   border-radius: 50px;
-  box-shadow: 0 0.125rem 0 rgb(65, 61, 69, 20%);
+  outline: none;
+  border-radius: 50px;
+  box-shadow: 1px 1px 3px 2px #b25a49;
   transition: all 200ms ease;
 }
 
