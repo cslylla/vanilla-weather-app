@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #f15372;
+  --secondary-color: #b25a49;
+}
+
 body {
   background-image: url("../src/pictures/background.jpg");
 }
@@ -31,24 +36,24 @@ li {
 
 a {
   text-decoration: none;
-  color: #b25a49;
+  color: var(--secondary-color);
   transition: all 200ms ease-in-out;
 }
 a:hover {
   text-decoration: none;
-  color: #b25a49;
+  color: var(--secondary-color);
   transition: all 200ms ease-in-out;
   font-weight: bold;
   cursor: default;
 }
 
 small {
-  color: #f15372;
+  color: var(--primary-color);
   font-weight: bold;
 }
 a.contact {
   text-decoration: none;
-  color: #f15372;
+  color: var(--primary-color);
   transition: all 200ms ease-in-out;
 }
 
@@ -58,7 +63,7 @@ a.contact:hover {
 }
 
 a.active {
-  color: #f15372;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -72,16 +77,16 @@ div.col-sm-3 {
 }
 
 .form-control.searchField:focus {
-  outline: 2px solid #b25a49;
+  outline: 2px solid var(--secondary-color);
   box-shadow: none;
-  border-color: #b25a49;
-  color: #f15372;
+  border-color: var(--secondary-color);
+  color: var(--primary-color);
   font-weight: bold;
 }
 
 .searchButton {
   color: #ffff;
-  background-color: #f15372;
+  background-color: var(--primary-color);
   width: 120px;
   font-size: 0.875rem;
   margin-left: 20px;
@@ -93,24 +98,24 @@ div.col-sm-3 {
   transition: all 200ms ease;
 }
 .searchButton:hover {
-  background-color: #b25a49;
+  background-color: var(--secondary-color);
 }
 .searchButton:focus {
   color: #ffff;
-  background-color: #f15372;
+  background-color: var(--primary-color);
   font-size: 0.875rem;
   font-weight: 900;
   padding: 0.5rem;
   line-height: 1.125rem;
   outline: none;
   border-radius: 50px;
-  box-shadow: 1px 1px 3px 2px #b25a49;
+  box-shadow: 1px 1px 3px 2px var(--secondary-color);
   transition: all 200ms ease;
 }
 
 .currentLocationButton {
   color: #ffff;
-  background-color: #f15372;
+  background-color: var(--primary-color);
   width: 120px;
   font-size: 0.875rem;
   font-weight: 900;
@@ -121,12 +126,12 @@ div.col-sm-3 {
   transition: all 200ms ease;
 }
 .currentLocationButton:hover {
-  background-color: #b25a49;
+  background-color: var(--secondary-color);
 }
 
 .currentLocationButton:focus {
   color: #ffff;
-  background-color: #f15372;
+  background-color: var(--primary-color);
   font-size: 0.875rem;
   font-weight: 900;
   padding: 0.5rem;
@@ -134,7 +139,7 @@ div.col-sm-3 {
   border-radius: 50px;
   outline: none;
   border-radius: 50px;
-  box-shadow: 1px 1px 3px 2px #b25a49;
+  box-shadow: 1px 1px 3px 2px var(--secondary-color);
   transition: all 200ms ease;
 }
 
@@ -144,10 +149,10 @@ div.col-sm-3 {
 }
 .vanilla-weather-app {
   margin: 0 auto;
-  color: #f15372;
+  color: var(--primary-color);
   background-color: #ffdda5;
   padding: 40px;
-  border: 5px solid #f15372;
+  border: 5px solid var(--primary-color);
   border-radius: 15px;
 }
 
@@ -174,7 +179,7 @@ div.col-sm-3 {
 }
 
 .mainPicture {
-  color: #b25a49;
+  color: var(--secondary-color);
   font-size: 120px;
   padding: 0;
   margin: 0 auto;
@@ -219,7 +224,7 @@ div.col-sm-3 {
 }
 
 .forecastIcon {
-  color: #b25a49;
+  color: var(--secondary-color);
   font-size: 60px;
   padding-top: 10px;
   padding-bottom: 10px;
